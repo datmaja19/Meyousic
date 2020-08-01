@@ -83,7 +83,8 @@
             android:id="@+id/songs_recycleview"
             android:layout_width="match_parent"
             android:clipToPadding="false"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:paddingBottom="160dp"/>
 
 
     </LinearLayout>
