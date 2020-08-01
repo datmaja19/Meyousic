@@ -70,7 +70,7 @@ public class RecentAdapter extends RecyclerView.Adapter<RecentAdapter.MyViewHold
                 .with(context)
                 .load(modalClass.getImageurl())
                 .centerCrop()
-                .placeholder(R.mipmap.ic_launcher)
+                .placeholder(R.drawable.iconapp)
                 .into(holder.image);
 
 

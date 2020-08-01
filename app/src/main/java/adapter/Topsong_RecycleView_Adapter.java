@@ -70,7 +70,7 @@ public void onBindViewHolder(final MyViewHolder holder, final int position){
             .with(context)
             .load(modalClass.getImageurl())
             .centerCrop()
-            .placeholder(R.mipmap.ic_launcher)
+            .placeholder(R.drawable.iconapp)
             .into(holder.image);
 
 
