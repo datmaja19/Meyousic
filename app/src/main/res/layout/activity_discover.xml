@@ -82,7 +82,7 @@
             android:id="@+id/playerhome"
             android:visibility="gone"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="43.3dp"
             android:layout_marginTop="7.3dp"
             android:layout_marginBottom="7.3dp"
             android:layout_marginLeft="8.3dp"
@@ -107,6 +107,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
+                    android:maxLines="1"
                     android:layout_marginBottom="-3dp"
                     android:textColor="#4f4f4f"
                     android:text="Starboy" />
@@ -135,8 +136,8 @@
                 android:layout_width="32.7dp"
                 android:layout_height="32.7dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="19.3dp"
-                android:layout_marginRight="19.3dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
                 android:src="@drawable/pause"/>
 
             <ProgressBar
@@ -146,8 +147,8 @@
                 android:layout_width="32.7dp"
                 android:layout_height="32.7dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="19.3dp"
-                android:layout_marginRight="19.3dp"/>
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"/>
 
             <ImageView
 
@@ -155,8 +156,8 @@
                 android:layout_width="32.7dp"
                 android:layout_height="32.7dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="19.3dp"
-                android:layout_marginRight="19.3dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
                 android:src="@drawable/play2"/>
 
 
