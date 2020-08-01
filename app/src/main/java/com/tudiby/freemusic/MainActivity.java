@@ -677,8 +677,8 @@ public class MainActivity extends AppCompatActivity {
             if (fragmento instanceof TopsongFragment){
 
         AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
-        alert.setTitle("Find a Song");
-        alert.setMessage("Input Search Query");
+        alert.setTitle("Type Title or Artist");
+//        alert.setMessage("Input Search Query");
 // Set an EditText view to get user input
         final EditText input = new EditText(MainActivity.this);
 

@@ -285,8 +285,8 @@ public class TopsongFragment extends Fragment {
 
     public void  showsearchdialog(){
         AlertDialog.Builder alert = new AlertDialog.Builder(ctx);
-        alert.setTitle("Find a Song");
-        alert.setMessage("Input Search Query");
+        alert.setTitle("Type Title or Artist");
+//        alert.setMessage("Input Search Query");
 // Set an EditText view to get user input
         final EditText input = new EditText(ctx);
 
@@ -296,9 +296,6 @@ public class TopsongFragment extends Fragment {
                 String result = input.getText().toString();
 
                 findsongs(result);
-
-
-
 
                 ;
 
