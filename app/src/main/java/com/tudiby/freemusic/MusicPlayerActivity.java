@@ -1,7 +1,9 @@
-package simplemusicuiux.musicapp;
+package com.tudiby.freemusic;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.tudiby.freemusic.R;
 
 public class MusicPlayerActivity extends AppCompatActivity {
 

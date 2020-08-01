@@ -1,4 +1,4 @@
-package simplemusicuiux.musicapp;
+package com.tudiby.freemusic;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -16,7 +16,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -36,6 +35,7 @@ import ModalClass.GenreModel;
 import ModalClass.SongModel;
 import adapter.GenreAdapter;
 import adapter.Topsong_RecycleView_Adapter;
+import com.tudiby.freemusic.R;
 
 
 /**

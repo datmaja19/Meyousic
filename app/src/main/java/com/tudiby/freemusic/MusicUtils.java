@@ -1,4 +1,4 @@
-package simplemusicuiux.musicapp;
+package com.tudiby.freemusic;
 
 public class MusicUtils {
     public static final int MAX_PROGRESS = 10000;

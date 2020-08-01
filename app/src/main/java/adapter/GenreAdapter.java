@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import ModalClass.GenreModel;
-import simplemusicuiux.musicapp.R;
-import simplemusicuiux.musicapp.TopsongFragment;
+import com.tudiby.freemusic.R;
+import com.tudiby.freemusic.TopsongFragment;
 
 public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.MyViewHolder> {
 

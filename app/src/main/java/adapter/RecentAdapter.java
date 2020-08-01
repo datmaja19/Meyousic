@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
 import androidx.annotation.RequiresApi;
-import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,9 +21,9 @@ import java.util.List;
 
 import ModalClass.SongModel;
 import cn.pedant.SweetAlert.SweetAlertDialog;
-import simplemusicuiux.musicapp.MainActivity;
-import simplemusicuiux.musicapp.MusicUtils;
-import simplemusicuiux.musicapp.R;
+import com.tudiby.freemusic.MainActivity;
+import com.tudiby.freemusic.MusicUtils;
+import com.tudiby.freemusic.R;
 
 
 

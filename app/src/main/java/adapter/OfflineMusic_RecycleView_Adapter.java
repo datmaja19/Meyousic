@@ -1,7 +1,6 @@
 package adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import androidx.annotation.RequiresApi;
@@ -21,8 +20,8 @@ import java.util.List;
 
 import ModalClass.OfflineModalClass;
 import cn.pedant.SweetAlert.SweetAlertDialog;
-import simplemusicuiux.musicapp.MainActivity;
-import simplemusicuiux.musicapp.R;
+import com.tudiby.freemusic.MainActivity;
+import com.tudiby.freemusic.R;
 
 
 

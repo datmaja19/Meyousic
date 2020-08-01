@@ -1,4 +1,4 @@
-package simplemusicuiux.musicapp;
+package com.tudiby.freemusic;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import ModalClass.OfflineModalClass;
 import adapter.OfflineMusic_RecycleView_Adapter;
 import adapter.Playlist_RecycleView_Adapter;
+import com.tudiby.freemusic.R;
 
 public class MyMusicActivity extends AppCompatActivity {
 

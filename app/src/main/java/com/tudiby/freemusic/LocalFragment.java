@@ -1,4 +1,4 @@
-package simplemusicuiux.musicapp;
+package com.tudiby.freemusic;
 
 import android.database.Cursor;
 import android.net.Uri;
@@ -19,8 +19,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ModalClass.OfflineModalClass;
-import ModalClass.SongModel;
 import adapter.OfflineMusic_RecycleView_Adapter;
+import com.tudiby.freemusic.R;
 
 
 /**

@@ -4,7 +4,7 @@ apply plugin: 'realm-android'
 android {
     compileSdkVersion 30
     defaultConfig {
-        applicationId "creativeuiux.musicapp"
+        applicationId "com.tudiby.freemusic"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1

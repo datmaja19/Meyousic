@@ -1,29 +1,18 @@
-package simplemusicuiux.musicapp;
+package com.tudiby.freemusic;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
-import android.widget.Button;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
-import com.ixidev.gdpr.GDPRChecker;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
+import com.tudiby.freemusic.R;
 
 
 public class SplashActivity extends AppCompatActivity {

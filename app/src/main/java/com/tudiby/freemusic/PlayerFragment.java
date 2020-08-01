@@ -1,4 +1,4 @@
-package simplemusicuiux.musicapp;
+package com.tudiby.freemusic;
 
 import android.app.TimePickerDialog;
 import android.content.Intent;
@@ -8,7 +8,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,8 +32,10 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 import java.util.Calendar;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
+import com.tudiby.freemusic.BuildConfig;
+import com.tudiby.freemusic.R;
 
-import static simplemusicuiux.musicapp.MainActivity.LOOPINGSTATUS;
+import static com.tudiby.freemusic.MainActivity.LOOPINGSTATUS;
 
 
 /**
@@ -384,7 +385,7 @@ public class PlayerFragment extends Fragment  {
                     Intent shareIntent = new Intent(Intent.ACTION_SEND);
                     shareIntent.setType("text/plain");
                     shareIntent.putExtra(Intent.EXTRA_SUBJECT, "My application name");
-                    String shareMessage= "\nLet me recommend you this application\n\n";
+                    String shareMessage= "\nPlay millions of free trending music\n\n";
                     shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
                     shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
                     startActivity(Intent.createChooser(shareIntent, "choose one"));

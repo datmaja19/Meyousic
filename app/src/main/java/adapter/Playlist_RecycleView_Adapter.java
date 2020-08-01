@@ -22,9 +22,9 @@ import java.util.List;
 
 import ModalClass.SongModel;
 import cn.pedant.SweetAlert.SweetAlertDialog;
-import simplemusicuiux.musicapp.MainActivity;
-import simplemusicuiux.musicapp.MusicUtils;
-import simplemusicuiux.musicapp.R;
+import com.tudiby.freemusic.MainActivity;
+import com.tudiby.freemusic.MusicUtils;
+import com.tudiby.freemusic.R;
 
 
 

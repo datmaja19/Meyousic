@@ -8,8 +8,8 @@ import androidx.appcompat.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.util.Log;
 
-import simplemusicuiux.musicapp.BuildConfig;
-import simplemusicuiux.musicapp.R;
+import com.tudiby.freemusic.BuildConfig;
+import com.tudiby.freemusic.R;
 
 /**
  * Created by Dimitrios on 9/26/2017.

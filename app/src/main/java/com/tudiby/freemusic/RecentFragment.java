@@ -1,4 +1,4 @@
-package simplemusicuiux.musicapp;
+package com.tudiby.freemusic;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -20,6 +20,7 @@ import ModalClass.SongModel;
 import adapter.RecentAdapter;
 import helper.RealmHelper;
 import io.realm.Realm;
+import com.tudiby.freemusic.R;
 
 /**
  * A simple {@link Fragment} subclass.

@@ -1,4 +1,4 @@
-package simplemusicuiux.musicapp;
+package com.tudiby.freemusic;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -18,9 +18,9 @@ import java.util.List;
 
 import ModalClass.SongModel;
 import adapter.Playlist_RecycleView_Adapter;
-import adapter.RecentAdapter;
 import helper.RealmHelper;
 import io.realm.Realm;
+import com.tudiby.freemusic.R;
 
 
 /**

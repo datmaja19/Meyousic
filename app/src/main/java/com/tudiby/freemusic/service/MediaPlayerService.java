@@ -1,4 +1,4 @@
-package simplemusicuiux.musicapp.service;
+package com.tudiby.freemusic.service;
 
 import android.annotation.SuppressLint;
 import android.app.Service;
@@ -10,21 +10,16 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 
-import android.os.Handler;
 import android.os.IBinder;
-import android.util.Log;
 
 
 import androidx.annotation.Nullable;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 
-import simplemusicuiux.musicapp.PlayerFragment;
-
-import static simplemusicuiux.musicapp.MainActivity.LOOPINGSTATUS;
-import static simplemusicuiux.musicapp.MainActivity.PLAYERSTATUS;
-import static simplemusicuiux.musicapp.MainActivity.currentduraiton;
-import static simplemusicuiux.musicapp.MainActivity.totalduration;
+import static com.tudiby.freemusic.MainActivity.PLAYERSTATUS;
+import static com.tudiby.freemusic.MainActivity.currentduraiton;
+import static com.tudiby.freemusic.MainActivity.totalduration;
 
 public class MediaPlayerService extends Service {
 
