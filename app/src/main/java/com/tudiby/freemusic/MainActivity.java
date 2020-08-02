@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
     public static   boolean fromnext =false;
 
     public static SongModel currentsongmodel;
+    public  static int sessionId;
     private AdView mAdView;
 
 
@@ -558,7 +559,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void  showeq(){
-        int sessionId = mp.getAudioSessionId();
+
+
+
+
+
+
         DialogEqualizerFragment fragment = DialogEqualizerFragment.newBuilder()
                 .setAudioSessionId(sessionId)
                 .themeColor(ContextCompat.getColor(this, R.color.gray))

@@ -17,6 +17,8 @@ import androidx.annotation.Nullable;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 
+import com.tudiby.freemusic.MainActivity;
+
 import static com.tudiby.freemusic.MainActivity.PLAYERSTATUS;
 import static com.tudiby.freemusic.MainActivity.currentduraiton;
 import static com.tudiby.freemusic.MainActivity.totalduration;
@@ -62,6 +64,9 @@ public class MediaPlayerService extends Service {
                     totalduration=mp.getDuration();
                     currentduraiton=mp.getCurrentPosition();
                 }
+
+
+
 
             }
         }, new IntentFilter("fando"));
@@ -144,6 +149,7 @@ public class MediaPlayerService extends Service {
                         Intent intent = new Intent("fando");
                         intent.putExtra("status", "playing");
                         LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(intent);
+                        MainActivity.sessionId = mp.getAudioSessionId();
 
 //                        final Handler handler = new Handler();
 //                        final int delay = 100; //milliseconds
