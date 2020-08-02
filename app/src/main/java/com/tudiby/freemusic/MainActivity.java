@@ -741,7 +741,7 @@ public class MainActivity extends AppCompatActivity {
 
         }else {
 
-            Toast.makeText(getApplicationContext(),"This is Local Song",LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Sorry, can't add a local song playlist yet",LENGTH_LONG).show();
         }
 
 
