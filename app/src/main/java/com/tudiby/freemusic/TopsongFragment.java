@@ -37,6 +37,8 @@ import adapter.GenreAdapter;
 import adapter.Topsong_RecycleView_Adapter;
 import com.tudiby.freemusic.R;
 
+import static com.tudiby.freemusic.SplashActivity.KEY;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -221,7 +223,7 @@ public class TopsongFragment extends Fragment {
     public void getgenrechart(final String genre){
         listsongtop.clear();
         song_recycleview.removeAllViews();
-        String url="https://api-v2.soundcloud.com/charts?genre=soundcloud:genres:"+genre+"&high_tier_only=false&kind=top&limit=100&client_id=z7xDdzwjM6kB7fmXCd06c8kU6lFNtBCT";
+        String url="https://api-v2.soundcloud.com/charts?genre=soundcloud:genres:"+genre+"&high_tier_only=false&kind=top&limit=100&client_id="+KEY;
         JsonObjectRequest jsonObjectRequest=new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
