@@ -6,9 +6,6 @@
     tools:context=".TopsongFragment">
 
 
-
-
-
     <LinearLayout
 
         android:layout_width="match_parent"
@@ -55,10 +52,6 @@
 
 
 
-
-
-
-
         <LinearLayout
 
         android:paddingBottom="10dp"
@@ -72,7 +65,7 @@
             android:id="@+id/txt_titlesongs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15sp"
             android:text="TOP SONG"
             android:textAllCaps="true"
             android:textColor="#f83d69"
@@ -83,8 +76,7 @@
             android:id="@+id/songs_recycleview"
             android:layout_width="match_parent"
             android:clipToPadding="false"
-            android:layout_height="wrap_content"
-            android:paddingBottom="160dp"/>
+            android:layout_height="wrap_content"/>
 
 
     </LinearLayout>

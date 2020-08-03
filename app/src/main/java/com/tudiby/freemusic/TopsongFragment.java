@@ -109,10 +109,11 @@ public class TopsongFragment extends Fragment {
 
         genre_recycleview=view.findViewById(R.id.genre_recycleview);
         listgenre=new ArrayList<>();
-        listgenre.add(new GenreModel(R.drawable.treding_img1,"Alternative Rock"));
-        listgenre.add(new GenreModel(R.drawable.treding_img2,"Rock"));
         listgenre.add(new GenreModel(R.drawable.treding_img3,"Pop"));
+        listgenre.add(new GenreModel(R.drawable.treding_img2,"Reggae"));
+        listgenre.add(new GenreModel(R.drawable.treding_img2,"Rock"));
         listgenre.add(new GenreModel(R.drawable.treding_img1,"Country"));
+        listgenre.add(new GenreModel(R.drawable.treding_img1,"Alternative Rock"));
         genreAdapter= new GenreAdapter(ctx,listgenre,TopsongFragment.this);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(ctx,LinearLayoutManager.HORIZONTAL,false);
         genre_recycleview.setLayoutManager(linearLayoutManager);
@@ -141,7 +142,8 @@ public class TopsongFragment extends Fragment {
     }
 
     public void gettopchart(){
-        String url="https://api-v2.soundcloud.com/charts?charts-top:all-music&&high_tier_only=false&kind=top&limit=100&client_id=z7xDdzwjM6kB7fmXCd06c8kU6lFNtBCT";
+//        String url="https://api-v2.soundcloud.com/charts?charts-top:all-music&&high_tier_only=false&kind=top&limit=100&client_id=z7xDdzwjM6kB7fmXCd06c8kU6lFNtBCT";
+        String url="https://api-v2.soundcloud.com/charts?kind=top&genre=soundcloud%3Agenres%3Areggae&client_id=z7xDdzwjM6kB7fmXCd06c8kU6lFNtBCT&limit=100&offset=0";
         JsonObjectRequest jsonObjectRequest=new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {

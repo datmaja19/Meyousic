@@ -3,14 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:paddingRight="18dp"
+    android:paddingRight="18sp"
     android:orientation="vertical">
 
 
     <ImageView
         android:id="@+id/image"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
         android:layout_gravity="center"
         android:src="@drawable/artist1"/>
 
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:textSize="12.7sp"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="10sp"
         android:textColor="#4f4f4f"
         android:text="Workout"
         />

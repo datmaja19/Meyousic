@@ -318,7 +318,7 @@ public class MainActivity extends AppCompatActivity {
                       .with(this)
                       .load(modalClass.getImageurl())
                       .centerCrop()
-                      .placeholder(R.mipmap.ic_launcher)
+                      .placeholder(R.drawable.iconapp)
                       .into(imagehomeplayer);
 
           }
@@ -1019,7 +1019,7 @@ public class MainActivity extends AppCompatActivity {
     public  void showinter() {
         pDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
         pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-        pDialog.setTitleText("Loading Ads");
+        pDialog.setTitleText("Showing Ads");
         pDialog.setCancelable(false);
 
         pDialog.show();

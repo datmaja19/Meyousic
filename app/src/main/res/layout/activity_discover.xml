@@ -18,10 +18,6 @@
         tools:context=".freemusic.MainActivity">
 
 
-
-
-
-
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -33,6 +29,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/playerdepan"
         android:orientation="vertical">
 
 
@@ -48,7 +45,7 @@
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             app:tabTextColor="#4f4f4f"/>
 
         <androidx.viewpager.widget.ViewPager
@@ -62,6 +59,7 @@
 
 
 <LinearLayout
+    android:id="@+id/playerdepan"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_alignParentBottom="true"
@@ -71,10 +69,10 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="6dp"
-        android:layout_marginLeft="6dp"
-        app:cardCornerRadius="30dp"
+        android:layout_marginBottom="5sp"
+        android:layout_marginRight="6sp"
+        android:layout_marginLeft="6sp"
+        app:cardCornerRadius="30sp"
         android:layout_alignParentBottom="true">
 
 
@@ -82,23 +80,23 @@
             android:id="@+id/playerhome"
             android:visibility="gone"
             android:layout_width="match_parent"
-            android:layout_height="43.3dp"
-            android:layout_marginTop="7.3dp"
-            android:layout_marginBottom="7.3dp"
-            android:layout_marginLeft="8.3dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7.3sp"
+            android:layout_marginBottom="7.3sp"
+            android:layout_marginLeft="8.3sp"
             android:orientation="horizontal">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imagehomeplayer"
-                android:layout_width="43.3dp"
-                android:layout_height="43.3dp"
-                android:src="@drawable/starboy_img"/>
+                android:layout_width="43.3sp"
+                android:layout_height="43.3sp"
+                android:src="@drawable/iconapp"/>
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10.3dp"
+                android:layout_marginLeft="10.3sp"
                 android:layout_gravity="center"
                 android:orientation="vertical">
 
@@ -108,7 +106,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
                     android:maxLines="1"
-                    android:layout_marginBottom="-3dp"
+                    android:layout_marginBottom="-3sp"
                     android:textColor="#4f4f4f"
                     android:text="Starboy" />
 
@@ -125,46 +123,46 @@
 
             <ImageView
                 android:id="@+id/prev"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="35sp"
+                android:layout_height="35sp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_skip_previous_black_24dp"/>
 
             <ImageView
                 android:id="@+id/homepause"
                 android:visibility="gone"
-                android:layout_width="32.7dp"
-                android:layout_height="32.7dp"
+                android:layout_width="32.7sp"
+                android:layout_height="32.7sp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="7dp"
-                android:layout_marginRight="7dp"
+                android:layout_marginLeft="7sp"
+                android:layout_marginRight="7sp"
                 android:src="@drawable/pause"/>
 
             <ProgressBar
                 android:visibility="gone"
 
                 android:id="@+id/progressbar"
-                android:layout_width="32.7dp"
-                android:layout_height="32.7dp"
+                android:layout_width="32.7sp"
+                android:layout_height="32.7sp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="7dp"
-                android:layout_marginRight="7dp"/>
+                android:layout_marginLeft="7sp"
+                android:layout_marginRight="7sp"/>
 
             <ImageView
 
                 android:id="@+id/homeplay"
-                android:layout_width="32.7dp"
-                android:layout_height="32.7dp"
+                android:layout_width="32.7sp"
+                android:layout_height="32.7sp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="7dp"
-                android:layout_marginRight="7dp"
+                android:layout_marginLeft="7sp"
+                android:layout_marginRight="7sp"
                 android:src="@drawable/play2"/>
 
 
             <ImageView
                 android:id="@+id/next"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="35sp"
+                android:layout_height="35sp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_skip_next_black_24dp"/>
         </LinearLayout>
@@ -182,13 +180,8 @@
         ads:adSize="SMART_BANNER"
         ads:adUnitId="@string/bannerads">
     </com.google.android.gms.ads.AdView>
+
 </LinearLayout>
-
-
-
-
-
-
 
 </RelativeLayout>
 

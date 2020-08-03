@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="15.5dp"
+    android:paddingTop="2sp"
+    android:paddingBottom="2sp"
     android:id="@+id/lyoffline"
     android:orientation="vertical">
 
@@ -15,27 +16,27 @@
 
 
         <ImageView
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:layout_marginLeft="14.3dp"
+            android:layout_width="45sp"
+            android:layout_height="45sp"
+            android:layout_marginLeft="14.3sp"
             android:src="@drawable/iconapp"/>
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16.3dp"
+            android:layout_marginLeft="12sp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="45dp">
+                android:layout_height="match_parent">
 
             <customfonts.MyTextView_Poppins_Regular
                 android:id="@+id/txttitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:maxLines="2"
+                android:maxLines="1"
                 android:textSize="14sp"
                 android:textColor="#4f4f4f"
                 android:text="All offline songs"
@@ -45,13 +46,13 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp">
+                android:layout_height="match_parent"
+                android:layout_marginTop="2sp">
 
             <customfonts.MyTextView_Poppins_Regular
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="11.7sp"
+                android:textSize="10sp"
                 android:textColor="#8b8b8b"
                 android:id="@+id/size"
                 android:gravity="center_horizontal"
@@ -63,21 +64,21 @@
         </LinearLayout>
 
         <ImageView
-            android:layout_width="7dp"
-            android:layout_height="12.7dp"
+            android:layout_width="7sp"
+            android:layout_height="12.7sp"
             android:layout_gravity="center"
-            android:layout_marginRight="21dp"
-            android:layout_marginLeft="21dp"
+            android:layout_marginRight="21sp"
+            android:layout_marginLeft="10sp"
             android:src="@drawable/grey_arrow"/>
 
     </LinearLayout>
-    
+
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginLeft="57.3dp"
-        android:layout_marginRight="28dp"
+        android:layout_height="1sp"
+        android:layout_marginTop="5sp"
+        android:layout_marginLeft="57.3sp"
+        android:layout_marginRight="28sp"
         android:background="#f1f1f1"/>
 
 </LinearLayout>
