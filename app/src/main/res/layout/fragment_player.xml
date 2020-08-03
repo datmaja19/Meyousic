@@ -9,6 +9,7 @@
     android:background="@color/white"
     tools:context=".MusicPlayerActivity">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -51,7 +52,7 @@
                         android:layout_height="180sp"
                         android:layout_gravity="bottom|center_horizontal"
                         android:layout_marginTop="20sp"
-                        android:src="@drawable/starboy_img"
+                        android:src="@drawable/iconapp"
                         app:civ_border_color="#FFFFFF"
                         app:civ_border_width="10sp"/>
                 </LinearLayout>
@@ -86,19 +87,31 @@
     </LinearLayout>
 
 
-
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentBottom="true"
             android:gravity="bottom"
             android:orientation="vertical">
 
+
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adViewplayer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="0dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="0dp"
+            ads:adSize="LARGE_BANNER"
+            ads:adUnitId="@string/bannerads">
+
+        </com.google.android.gms.ads.AdView>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10sp"
+                android:layout_marginBottom="10dp"
                 android:gravity="center">
 
                 <ImageView
@@ -184,6 +197,7 @@
 
 
             <LinearLayout
+                android:id="@+id/tombolplayer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="20sp"
@@ -273,25 +287,9 @@
                         android:layout_marginStart="-30dp"
                         android:src="@drawable/ic_loop_off" />
                 </LinearLayout>
-
-
-
-
             </LinearLayout>
 
-            <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/adViewplayer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                ads:adSize="SMART_BANNER"
-                ads:adUnitId="@string/bannerads">
-
-            </com.google.android.gms.ads.AdView>
-
         </LinearLayout>
-
-
 
 
 
