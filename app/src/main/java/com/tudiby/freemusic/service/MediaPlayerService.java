@@ -17,7 +17,14 @@ import androidx.annotation.Nullable;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 
+import com.tudiby.freemusic.Constants;
 import com.tudiby.freemusic.MainActivity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import ModalClass.OfflineModalClass;
+import ModalClass.SongModel;
 
 import static com.tudiby.freemusic.MainActivity.PLAYERSTATUS;
 import static com.tudiby.freemusic.MainActivity.currentduraiton;
@@ -29,6 +36,11 @@ public class MediaPlayerService extends Service {
     private MediaPlayer mp = new MediaPlayer();
 
 
+    public static List<SongModel> currentlist = new ArrayList<>();
+    public static List<OfflineModalClass> currentlistoffline = new ArrayList<>();
+    int pos=0;
+    String type ="online";
+    String mediaurl;
     //receiver
 
     @Override
@@ -88,11 +100,29 @@ public class MediaPlayerService extends Service {
     @Override
     public int onStartCommand(final Intent intent, int flags, int startId) {
 
+        pos=intent.getIntExtra("pos",0);
+        type=intent.getStringExtra("type");
+
+        playsong(pos,type);
+
+        return START_STICKY;
+    }
+
+
+    private void playsong (final int pos, final String type){
         try {
 
+            if (type.equals("online")){
 
+                final SongModel modalClass = currentlist.get(pos);
+                mediaurl= Constants.SERVERMUSIC+modalClass.getId();
 
-            String mediaurl = intent.getStringExtra("mediaurl");
+            }
+            else {
+                final OfflineModalClass modalClass = currentlistoffline.get(pos);
+                mediaurl= modalClass.getFilepath();
+            }
+
 
 
 
@@ -120,11 +150,12 @@ public class MediaPlayerService extends Service {
             mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
                 public void onCompletion(MediaPlayer mp1) {
-                    System.out.println("error looping");
 
-                    Intent intent = new Intent("fando");
-                    intent.putExtra("status", "stoping");
-                    LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(intent);
+
+                    playsong(pos+1,type);
+
+
+//                    playsong(pos,type);
 
                 }
 
@@ -151,20 +182,7 @@ public class MediaPlayerService extends Service {
                         LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(intent);
                         MainActivity.sessionId = mp.getAudioSessionId();
 
-//                        final Handler handler = new Handler();
-//                        final int delay = 100; //milliseconds
 
-
-//                        if (mp.isPlaying()){
-//                            handler.postDelayed(new Runnable(){
-//                                public void run(){
-//                                    //do something
-//                                    currentduraiton=mp.getCurrentPosition();
-//                                    totalduration=mp.getDuration();
-//                                    handler.postDelayed(this, delay);
-//                                }
-//                            }, delay);
-//                        }
 
 
 
@@ -188,8 +206,6 @@ public class MediaPlayerService extends Service {
         }
 
 
-
-        return START_STICKY;
     }
 
 

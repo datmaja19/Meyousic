@@ -21,6 +21,7 @@ import java.util.List;
 import ModalClass.OfflineModalClass;
 import adapter.OfflineMusic_RecycleView_Adapter;
 import com.tudiby.freemusic.R;
+import com.tudiby.freemusic.service.MediaPlayerService;
 
 
 /**
@@ -37,7 +38,6 @@ public class LocalFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    public static   List<OfflineModalClass> listoffline =new ArrayList<>();
     OfflineMusic_RecycleView_Adapter offlineMusic_recycleView_adapter;
     RecyclerView recyclerView;
 
@@ -86,7 +86,7 @@ public class LocalFragment extends Fragment {
 
         recyclerView=view.findViewById(R.id.localrv);
 
-        offlineMusic_recycleView_adapter = new OfflineMusic_RecycleView_Adapter(getContext(),listoffline);
+        offlineMusic_recycleView_adapter = new OfflineMusic_RecycleView_Adapter(getContext(), MediaPlayerService.currentlistoffline);
         LinearLayoutManager layoutManager1 = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager1);
         recyclerView.setAdapter(offlineMusic_recycleView_adapter);
@@ -101,7 +101,7 @@ public class LocalFragment extends Fragment {
 
     public void getMusic(){
 
-        listoffline.clear();
+        MediaPlayerService.currentlistoffline.clear();
         recyclerView.removeAllViews();
 
 
@@ -117,7 +117,7 @@ public class LocalFragment extends Fragment {
                     modalClass.setSize(cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.SIZE)));
                     modalClass.setDuration(cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DURATION)));
                     modalClass.setType("offline");
-                    listoffline.add(modalClass);
+                    MediaPlayerService.currentlistoffline.add(modalClass);
 
 
 

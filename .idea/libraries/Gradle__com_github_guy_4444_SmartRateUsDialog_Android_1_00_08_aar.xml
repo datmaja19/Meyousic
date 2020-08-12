@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.guy-4444:SmartRateUsDialog-Android:1.00.08@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8179c80cd506126bc02ba2f2c1b84b28/jetified-SmartRateUsDialog-Android-1.00.08/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8179c80cd506126bc02ba2f2c1b84b28/jetified-SmartRateUsDialog-Android-1.00.08/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8179c80cd506126bc02ba2f2c1b84b28/jetified-SmartRateUsDialog-Android-1.00.08/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ccf29f22538efcf5e789cd442c7ad0c1/jetified-SmartRateUsDialog-Android-1.00.08/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ccf29f22538efcf5e789cd442c7ad0c1/jetified-SmartRateUsDialog-Android-1.00.08/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ccf29f22538efcf5e789cd442c7ad0c1/jetified-SmartRateUsDialog-Android-1.00.08/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

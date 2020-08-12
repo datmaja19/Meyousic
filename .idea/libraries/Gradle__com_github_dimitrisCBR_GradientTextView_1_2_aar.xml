@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.dimitrisCBR:GradientTextView:1.2@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d61a7c1684d047cc8eb615f228ab61b5/jetified-GradientTextView-1.2/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d61a7c1684d047cc8eb615f228ab61b5/jetified-GradientTextView-1.2/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d61a7c1684d047cc8eb615f228ab61b5/jetified-GradientTextView-1.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0835d56229f62cb08256088c39a996b8/jetified-GradientTextView-1.2/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0835d56229f62cb08256088c39a996b8/jetified-GradientTextView-1.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0835d56229f62cb08256088c39a996b8/jetified-GradientTextView-1.2/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

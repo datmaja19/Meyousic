@@ -120,6 +120,7 @@ public class SplashActivity extends AppCompatActivity {
     public  void kehome(){
         Intent intent = new Intent(SplashActivity.this,MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
     public void getkey(){

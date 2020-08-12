@@ -64,7 +64,6 @@ import com.tudiby.freemusic.R;
 import com.tudiby.freemusic.service.MediaPlayerService;
 
 import static android.widget.Toast.LENGTH_LONG;
-import static com.tudiby.freemusic.LocalFragment.listoffline;
 
 public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
@@ -87,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
 
     List<SongModel> listrecent = new ArrayList<>();
 
-    public static  List<SongModel> currentlistplay = new ArrayList<>();
     public static   boolean fromnext =false;
 
     public static SongModel currentsongmodel;
@@ -252,7 +250,7 @@ public class MainActivity extends AppCompatActivity {
         ONLINESONG=1;
 
         currentpos=position;
-        currentlistplay=listplay;
+        MediaPlayerService.currentlist=listplay;
          final SongModel modalClass = listplay.get(position);
         currentsongmodel=modalClass;
 
@@ -383,7 +381,8 @@ public class MainActivity extends AppCompatActivity {
 
         Intent plyerservice= new Intent(MainActivity.this, MediaPlayerService.class);
 
-        plyerservice.putExtra("mediaurl",Constants.SERVERMUSIC+modalClass.getId());
+        plyerservice.putExtra("pos",position);
+        plyerservice.putExtra("type","online");
 
 
         startService(plyerservice);
@@ -426,7 +425,7 @@ public class MainActivity extends AppCompatActivity {
         ONLINESONG=0;
 
         currentpos=position;
-        final OfflineModalClass modalClass = listoffline.get(position);
+        final OfflineModalClass modalClass = MediaPlayerService.currentlistoffline.get(position);
 
 
         progressBar.setVisibility(View.VISIBLE);
@@ -537,9 +536,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         Intent plyerservice= new Intent(MainActivity.this, MediaPlayerService.class);
-        plyerservice.putExtra("mediaurl",modalClass.getFilepath());
-        startService(plyerservice);
 
+        plyerservice.putExtra("pos",position);
+        plyerservice.putExtra("type","offline");
+
+
+        startService(plyerservice);
          PLAYERSTATUS="LOADING";
 
 
@@ -619,8 +621,8 @@ public class MainActivity extends AppCompatActivity {
         PLAYERSTATUS="LOADING";
         if (ONLINESONG==1){
 
-            if (currentpos<(currentlistplay.size()-1)){
-                playmusic(currentpos+1,currentlistplay);
+            if (currentpos<(MediaPlayerService.currentlist.size()-1)){
+                playmusic(currentpos+1,MediaPlayerService.currentlist);
 
             }
 
@@ -628,7 +630,7 @@ public class MainActivity extends AppCompatActivity {
 
         else {
 
-            if (currentpos<(listoffline.size()-1)){
+            if (currentpos<(MediaPlayerService.currentlistoffline.size()-1)){
                 playmusicoffline(currentpos+1);
             }
 
@@ -644,7 +646,7 @@ public class MainActivity extends AppCompatActivity {
     public void repeat(){
         if (ONLINESONG==1){
 
-            playmusic(currentpos,currentlistplay);
+            playmusic(currentpos,MediaPlayerService.currentlist);
 
         }
 
@@ -664,14 +666,14 @@ public class MainActivity extends AppCompatActivity {
     public void previous(){
         if (ONLINESONG==1){
 
-            if (currentpos<currentlistplay.size())
-                playmusic(currentpos-1,currentlistplay);
+            if (currentpos<MediaPlayerService.currentlist.size())
+                playmusic(currentpos-1,MediaPlayerService.currentlist);
 
         }
 
         else {
 
-            if (currentpos<listoffline.size())
+            if (currentpos<MediaPlayerService.currentlistoffline.size())
                 playmusicoffline(currentpos-1);
 
         }
@@ -1037,23 +1039,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onAdFailedToLoad(int errorCode) {
-                pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-                pDialog.setTitleText("You have left the app, thank you for using tudiby");
-                pDialog.setCancelable(false);
-                pDialog.show();
+                Intent intent = new Intent(MainActivity.this,ExitActivity.class);
+                startActivity(intent);
+                finish();
 
-                Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
-
-                    @Override
-                    public void run() {
-                        finish();
-                        System.exit(0);
-                        finishAffinity();
-                        // change image
-                    }
-
-                }, 3000);
                 // Code to be executed when an ad request fails.
             }
 
@@ -1074,24 +1063,11 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onAdClosed() {
-                pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-                pDialog.setTitleText("You have left the app, thank you for using tudiby");
-                pDialog.setCancelable(false);
-                pDialog.show();
 
-                Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
 
-                    @Override
-                    public void run() {
-                        finish();
-                        finishAffinity();
-                        System.exit(0);
-                        // change image
-                    }
-
-                }, 3000);
-
+                Intent intent = new Intent(MainActivity.this,ExitActivity.class);
+                startActivity(intent);
+                finish();
 
 
                 // Code to be executed when the interstitial ad is closed.
