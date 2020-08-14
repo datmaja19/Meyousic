@@ -28,8 +28,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".MusicPlayerActivity" />
-        <activity android:name=".MyMusicActivity" />
 
         <service android:name=".service.MediaPlayerService" /> <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
         <meta-data

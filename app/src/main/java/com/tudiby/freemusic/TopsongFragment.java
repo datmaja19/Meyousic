@@ -319,7 +319,7 @@ public class TopsongFragment extends Fragment {
     public void findsongs(String q){
         listsongtop.clear();
         song_recycleview.removeAllViews();
-        String url="https://api-v2.soundcloud.com/search/tracks?q="+q+"&client_id=z7xDdzwjM6kB7fmXCd06c8kU6lFNtBCT&limit=100";
+        String url="https://api-v2.soundcloud.com/search/tracks?q="+q+"&client_id="+KEY+"&limit=100";
         JsonObjectRequest jsonObjectRequest=new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {

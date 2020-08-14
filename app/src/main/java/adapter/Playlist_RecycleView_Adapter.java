@@ -159,6 +159,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
                 pDialog.cancel();
                 if (context instanceof MainActivity) {
                     ((MainActivity)context).playmusic(position,playlistModalClassList);
+                    ((MainActivity)context).addtorecent();
                 }
 
                 // Code to be executed when an ad request fails.
@@ -185,6 +186,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
                 if (context instanceof MainActivity) {
 
                     ((MainActivity)context).playmusic(position,playlistModalClassList);
+                    ((MainActivity)context).addtorecent();
                 }
                 // Code to be executed when the interstitial ad is closed.
             }

@@ -64,6 +64,7 @@ import com.tudiby.freemusic.R;
 import com.tudiby.freemusic.service.MediaPlayerService;
 
 import static android.widget.Toast.LENGTH_LONG;
+import static com.tudiby.freemusic.service.MediaPlayerService.LOOPINGSTATUS;
 
 public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
@@ -75,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
     public static String PLAYERSTATUS="";
     public  static  int PLAYCOUNT=0;
     public  static  int ONLINESONG=0;
-    public  static boolean LOOPINGSTATUS=false;
     public int currentpos;
     private TabAdapter adapter;
     private TabLayout tabLayout;
@@ -126,7 +126,8 @@ public class MainActivity extends AppCompatActivity {
         } else {
         }
         loadbanner();
-
+//        getrecent();
+//        getplaylists();
 
         SharedPreferences sharedPreferences = getSharedPreferences("push", MODE_PRIVATE);
 
@@ -142,7 +143,27 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new LocalFragment(), "Local");
         adapter.addFragment(new PlaylistFragment(), "Playlist");
         viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                viewPager.getAdapter().notifyDataSetChanged();
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
+//        viewPager.setOffscreenPageLimit(4);  //Add this
+
         tabLayout.setupWithViewPager(viewPager);
+
 
         searchimage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -784,7 +805,7 @@ public class MainActivity extends AppCompatActivity {
     public List<SongModel> getrecent(){
         realmHelper = new RealmHelper(realm,getApplication());
         listrecent=  realmHelper.getAllSongsrecent();
-
+//        adapter.notifyDataSetChanged();
         return listrecent;
 
     }
@@ -792,7 +813,7 @@ public class MainActivity extends AppCompatActivity {
     public List<SongModel> getplaylists(){
         realmHelper = new RealmHelper(realm,getApplication());
         listrecent=  realmHelper.getallplaylists();
-
+//        adapter.notifyDataSetChanged();
         return listrecent;
     }
 
@@ -811,19 +832,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void settimer(Long end,String timer){
-        new CountDownTimer(end, 1000) {
+        Intent intent = new Intent("fando");
+        intent.putExtra("status", "settimer");
+        intent.putExtra("end",end);
+        LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(intent);
 
-            public void onTick(long millisUntilFinished) {
-
-            }
-
-            public void onFinish() {
-                Intent intent = new Intent("fando");
-                intent.putExtra("status", "stopmusic");
-                LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(intent);
-
-            }
-        }.start();
 
         Toast.makeText(getApplicationContext(),"Timer set : "+timer,Toast.LENGTH_LONG).show();
 

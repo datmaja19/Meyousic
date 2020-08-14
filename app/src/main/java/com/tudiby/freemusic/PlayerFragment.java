@@ -35,7 +35,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 import com.tudiby.freemusic.BuildConfig;
 import com.tudiby.freemusic.R;
 
-import static com.tudiby.freemusic.MainActivity.LOOPINGSTATUS;
+import static com.tudiby.freemusic.service.MediaPlayerService.LOOPINGSTATUS;
 
 
 /**

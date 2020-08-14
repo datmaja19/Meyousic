@@ -10,7 +10,9 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 
+import android.os.CountDownTimer;
 import android.os.IBinder;
+import android.widget.Toast;
 
 
 import androidx.annotation.Nullable;
@@ -34,6 +36,7 @@ public class MediaPlayerService extends Service {
 
     //player
     private MediaPlayer mp = new MediaPlayer();
+    public  static boolean LOOPINGSTATUS=false;
 
 
     public static List<SongModel> currentlist = new ArrayList<>();
@@ -75,6 +78,27 @@ public class MediaPlayerService extends Service {
                 else if (status.equals("getduration")){
                     totalduration=mp.getDuration();
                     currentduraiton=mp.getCurrentPosition();
+                }
+                else if (status.equals("settimer")){
+                    Long end= intent.getLongExtra("end",0);
+//                    Toast.makeText(getApplicationContext(),"Timer set : "+end,Toast.LENGTH_LONG).show();
+
+                    new CountDownTimer(end, 1000) {
+
+
+                        public void onTick(long millisUntilFinished) {
+
+                        }
+
+                        public void onFinish() {
+                            Intent intent = new Intent("fando");
+                            intent.putExtra("status", "stopmusic");
+                            LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(intent);
+                            Toast.makeText(getApplicationContext(),"Timer End : ",Toast.LENGTH_LONG).show();
+
+
+                        }
+                    }.start();
                 }
 
 
@@ -152,7 +176,13 @@ public class MediaPlayerService extends Service {
                 public void onCompletion(MediaPlayer mp1) {
 
 
-                    playsong(pos+1,type);
+                    if (LOOPINGSTATUS){
+                        playsong(pos,type);
+                    }
+                    else {
+                        playsong(pos+1,type);
+                    }
+
 
 
 //                    playsong(pos,type);
